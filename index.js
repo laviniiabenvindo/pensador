@@ -10,7 +10,8 @@ const conn = require("./db/conn");
 const { Cookie } = require("express-session");
 
 // import models
-
+const User = require("./models/User");
+const Tought = require("./models/Tought");
 // import rotas
 
 // import controller
@@ -49,13 +50,19 @@ app.use(flash());
 app.use(express.static("public"));
 
 // Armazenar as sessões nas rotas
-app.use((request, response, next)=>{
-    if(request.session.userId){
-        response.locals.session = request.session
-    }
-    next()
-})
+app.use((request, response, next) => {
+  if (request.session.userId) {
+    response.locals.session = request.session;
+  }
+  next();
+});
 
 // rotas
 
 // conexões e criaçãos das tabelas do banco
+conn
+  .sync()
+  .then(() => {
+    app.listen(5000);
+  })
+  .catch((err)=> console.log(err));
