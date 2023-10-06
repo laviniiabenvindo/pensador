@@ -72,14 +72,21 @@ form{
 }
 
 .form-control input{
+  font-size: 17px;
+  outline: none;
+  padding-left: 15px;
   border: 2px solid var(--white);
   height: 44px;
   width: 468px;
 }
 
+.form-control input:focus{
+  border-color: var(--blue);
+}
+
 input::placeholder{
+  font-size: 15px;
   color: var(--gray);
-  padding-left: 15px;
 }
 
 #btn{
@@ -106,7 +113,7 @@ input::placeholder{
   padding-left: 7px;
   display: flex;
   width: 468px;
-  height: 50px;
+  height: 55px;
   align-items: center;
 }
 
