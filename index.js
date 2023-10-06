@@ -4,10 +4,11 @@ const session = require("express-session");
 const fileStore = require("session-file-store")(session);
 const flash = require("express-flash");
 
+const port = 5000;
+
 const app = express();
 
 const conn = require("./db/conn");
-const { Cookie } = require("express-session");
 
 // import models
 const User = require("./models/User");
@@ -15,6 +16,7 @@ const Tought = require("./models/Tought");
 
 // import rotas
 const toughtsRoutes = require("./routes/toughtsRoutes");
+const authRouters = require("./routes/authRouters");
 
 // import controller
 const ToughtController = require("./controllers/ToughtController");
@@ -61,11 +63,12 @@ app.use((request, response, next) => {
 
 // rotas
 app.use("/toughts", toughtsRoutes);
+app.use("/", authRouters);
 app.get("/", ToughtController.showToughts);
 // conexões e criaçãos das tabelas do banco
 conn
   .sync()
   .then(() => {
-    app.listen(5000);
+    app.listen(port);
   })
   .catch((err) => console.log(err));
