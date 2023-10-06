@@ -12,10 +12,12 @@ const { Cookie } = require("express-session");
 // import models
 const User = require("./models/User");
 const Tought = require("./models/Tought");
+
 // import rotas
+const toughtsRoutes = require("./routes/toughtsRoutes");
 
 // import controller
-
+const ToughtController = require("./controllers/ToughtController");
 // configurar engine
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
@@ -58,11 +60,12 @@ app.use((request, response, next) => {
 });
 
 // rotas
-
+app.use("/toughts", toughtsRoutes);
+app.get("/", ToughtController.showToughts);
 // conexões e criaçãos das tabelas do banco
 conn
   .sync()
   .then(() => {
     app.listen(5000);
   })
-  .catch((err)=> console.log(err));
+  .catch((err) => console.log(err));
