@@ -90,6 +90,7 @@ input::placeholder{
 }
 
 #btn{
+  margin-top: 20px;
   font-size: 20px;
   border: 2px solid var(--blue);
   color: var(--blue);
