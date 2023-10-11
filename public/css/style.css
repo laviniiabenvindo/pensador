@@ -97,6 +97,12 @@ input::placeholder{
   width: 154px;
   height: 44px;
   background-color: transparent;
+  transition: 0.5s;
+}
+
+#btn:hover{
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 #subTitle{
