@@ -1,10 +1,34 @@
 const User = require("../models/User");
-const bcrytpt = require("bcryptjs");
-const { request } = require("express");
+const bcrypt = require("bcryptjs");
 
 module.exports = class AuthController {
   static async login(request, response) {
     return response.render("auth/login");
+  }
+  static async loginPost(request, response) {
+    const { email, password } = request.body;
+
+    const user = await User.findOne({ where: { email: email } });
+
+    //Validar email
+    if (!user) {
+      request.flash("message", "Usuário não encontrado");
+      response.redirect("/login");
+    }
+
+    //Validar senha
+    const passwordMatch = bcrypt.compareSync(password, user.password);
+    if (!passwordMatch) {
+      request.flash("message", "Senha inválida");
+      response.redirect("/login");
+      return
+    }
+
+    request.session.userId = user.id;
+    request.flash("message", "Autenticação realizada com sucesso!");
+    request.session.save(() => {
+      response.redirect("/");
+    });
   }
   static async register(request, response) {
     return response.render("auth/register");
