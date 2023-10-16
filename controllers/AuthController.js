@@ -20,7 +20,7 @@ module.exports = class AuthController {
     const passwordMatch = bcrypt.compareSync(password, user.password);
     if (!passwordMatch) {
       request.flash("message", "Senha inválida");
-      response.redirect("/login");
+      response.render("auth/login");
       return
     }
 
@@ -49,9 +49,9 @@ module.exports = class AuthController {
       return;
     }
     //Criptografar a senha do usuario
-    const salt = bcrytpt.genSaltSync(10);
+    const salt = bcrypt.genSaltSync(10);
 
-    const hashedPassword = bcrytpt.hashSync(password, salt);
+    const hashedPassword = bcrypt.hashSync(password, salt);
     //criar objeto usuario para cadastro do banco
     const user = {
       name,
