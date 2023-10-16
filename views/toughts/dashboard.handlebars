@@ -1,7 +1,22 @@
 <section class="dashboard">
   <div class="title-conteiner">
-    <h2>Dashboard</h2>
+    <span class="box">
+      <span class="title"><h2>Dashboard</h2></span>
+      <h3>Seus Pensamentos</h3>
+    </span>
     <a href="/toughts/add" class="btn">Criar Pensamentos</a>
   </div>
-  <h3>Seus Pensamentos</h3>
+  <ul>
+    {{#each toughts}}
+    <li>
+      <span>{{this.title}}</span>
+      <span>
+        <a href="/">Editar</a>
+      </span>
+      <form action="/" method="post">
+        <input type="submit" value="Excluir">
+      </form>
+    </li>
+    {{/each}}
+  </ul>
 </section>
