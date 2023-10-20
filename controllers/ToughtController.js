@@ -3,7 +3,12 @@ const User = require("../models/User");
 
 module.exports = class ToughtController {
   static async showToughts(request, response) {
-    return response.render("toughts/home"); //Mostrando um view
+    const toughtsData = await Tought.findAll({
+      include:User,
+    })
+    const toughts = toughtsData.map((result)=>result.get({plain:true}))
+    console.log(toughts)
+    return response.render("toughts/home", {toughts}); //Mostrando um view
   }
 
   static async dashboard(request, response) {

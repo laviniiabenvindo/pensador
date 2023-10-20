@@ -1,10 +1,10 @@
-:root{
+:root {
   --background: #1c1b1b;
-  --blue:#068FFF;
-  --white:#FFF;
+  --blue: #068fff;
+  --white: #fff;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,11 +14,11 @@
 }
 
 /*NAVBAR*/
-#logo img{
+#logo img {
   height: 50px;
 }
 
-#navbar{
+#navbar {
   padding: 1.2rem 1.4rem;
   margin-bottom: 1rem;
   display: flex;
@@ -28,39 +28,39 @@
   border-bottom: 2px solid var(--white);
 }
 
-#navbar ul{
+#navbar ul {
   display: flex;
   list-style: none;
 }
 
-#navbar ul li{
+#navbar ul li {
   margin-left: 1rem;
 }
 
-#navbar ul li a{
+#navbar ul li a {
   text-decoration: none;
   font-weight: bold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-#navbar ul li a:hover{
+#navbar ul li a:hover {
   color: var(--blue);
 }
 
 /*CONTAINER*/
-.container{
+.container {
   min-height: 70vh;
   padding: 2rem;
 }
 
 /*FOOTER*/
-footer{
+footer {
   height: 150px;
   display: grid;
   place-items: center;
   border-top: 2px solid var(--white);
 }
-footer span{
+footer span {
   font-weight: bold;
   color: var(--blue);
 }
@@ -81,7 +81,7 @@ footer span{
   content: "";
   padding: 3px;
   margin-right: 5px;
-  background-color: #068FFF;
+  background-color: #068fff;
 }
 
 .formRegister {
@@ -100,18 +100,18 @@ footer span{
   padding: 10px;
 }
 
-.formRegister input[type=submit]{
-  margin-top: 20px ;
+.formRegister input[type="submit"] {
+  margin-top: 20px;
   max-width: 154px;
-  border-color: #068FFF;
-  color: #068FFF;
+  border-color: #068fff;
+  color: #068fff;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.formRegister input[type=submit]:hover{
+.formRegister input[type="submit"]:hover {
   background-color: var(--blue);
   color: var(--white);
 }
@@ -121,11 +121,11 @@ footer span{
 }
 
 .sectionRegister a {
-  color: #068FFF;
+  color: #068fff;
 }
 
 /*MESSAGE*/
-.message{
+.message {
   padding: 1rem;
   color: var(--blue);
   background-color: var(--white);
@@ -137,10 +137,9 @@ footer span{
 }
 
 /** CRIAR PENSAMENTO */
-.tought-form-container h1{
+.tought-form-container h1 {
   margin-top: 30px;
 }
-
 
 .tought-form-container form {
   display: flex;
@@ -160,27 +159,27 @@ footer span{
   max-width: 400px;
 }
 
-.tought-form-container input[type=submit]{
-  margin-top: 20px ;
+.tought-form-container input[type="submit"] {
+  margin-top: 20px;
   max-width: 200px;
-  border-color: #068FFF;
-  color: #068FFF;
+  border-color: #068fff;
+  color: #068fff;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .tought-form-container h1::before {
   content: "";
   padding: 3px;
   margin-right: 5px;
-  background-color: #068FFF;
+  background-color: #068fff;
 }
 
 /** Seção do dashboard */
 
-.dashboard{
+.dashboard {
   margin: 0 100px;
 }
 
@@ -189,7 +188,7 @@ footer span{
   justify-content: space-between;
 }
 
-.title-container h1::before{
+.title-container h1::before {
   content: "";
   padding: 3px;
   margin-right: 5px;
@@ -204,7 +203,7 @@ footer span{
   font-weight: bold;
 }
 
-.dashboard li{
+.dashboard li {
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -218,4 +217,88 @@ footer span{
 .dashboard form {
   display: inline;
   margin: 2px 5px;
+}
+
+.home-header {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  flex-direction: column;
+}
+
+.home-header h1 {
+  margin-bottom: 1rem;
+}
+
+.home-header a {
+  color: var(--white);
+}
+
+.home-header p,
+.home-header form {
+  margin-bottom: 1rem;
+}
+
+.home-header input {
+  border: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-bottom: 1px solid var(--white);
+}
+
+.home-header input[type="text"] {
+  width: 70%;
+  font-size: 18px;
+}
+
+.home-header input::placeholder {
+  color: var(--white);
+}
+
+.order-container {
+  display: flex;
+  max-width: 70%;
+  margin: 0 auto 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-container form {
+  margin: 0;
+}
+
+.order-container button {
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.order-container button:hover,
+.order-container i:hover,
+.order-container a:hover {
+  color: var(--blue);
+}
+
+.order-container button,
+.order-container i,
+.order-container a {
+  margin: 0 7px;
+}
+
+.toughts-container figure {
+  border-bottom: 1px solid #333;
+  padding: 0.5rem;
+  max-width: 70%;
+  margin: 0 auto 1rem;
+}
+
+.title-container blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.toughts-container span {
+  color: var(--blue);
 }
