@@ -7,10 +7,10 @@ const sequelize = new Sequelize("tought", "aluno_medio", "@lunoSenai23.", {
 });
 
 try {
-  sequelize.authenticate()
-  console.log("Conectado ao MYSQL!!");
+  sequelize.authenticate();
+  console.log("MYSQL Conectado");
 } catch (error) {
-  console.log(`Erro: ${error}`);
+  console.log(`Erro ao conectar: ${error}`);
 }
 
 module.exports = sequelize;

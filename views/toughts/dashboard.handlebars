@@ -1,23 +1,26 @@
 <section class="dashboard">
-  <div class="title-conteiner">
-    <span class="box">
-      <span class="title"><h2>Dashboard</h2></span>
-      <h3>Seus Pensamentos</h3>
-    </span>
-    <a href="/toughts/add" class="btn">Criar Pensamentos</a>
+  <div class="title-container">
+    <h2>Dashboard:</h2>
+    <a href="/toughts/add" class="btn">Criar Pensamento</a>
   </div>
+  <h3>Seus pensamentos:</h3>
   <ul>
     {{#each toughts}}
-    <li>
-      <span>{{this.title}}</span>
-      <span>
-        <a href="/">Editar</a>
-      </span>
-      <form action="/" method="post">
-      <input type="hidden" name="id" value="{{this.id}}">
-        <input type="submit" value="Excluir">
-      </form>
-    </li>
+      <li>
+        <span class="">{{this.title}}</span>
+        <span class="actions">
+          <a href="/toughts/edit/{{this.id}}" class="btn"> Editar</a>
+          <form action="/toughts/remove" method="post">
+            <input type="hidden" name="id" value="{{this.id}}" />
+            <input type="submit" value="Excluir" class="btn" />
+          </form>
+        </span>
+      </li>
     {{/each}}
   </ul>
+  {{#if emptyTought}}
+    <p>Ainda não existe pensamentos, comece a criar
+      <a href="/toughts/add">por aqui</a>
+    </p>
+  {{/if}}
 </section>
