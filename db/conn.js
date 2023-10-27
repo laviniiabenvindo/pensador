@@ -13,4 +13,5 @@ try {
   console.log(`Erro ao conectar: ${error}`);
 }
 
+
 module.exports = sequelize;

@@ -4,6 +4,5 @@ module.exports.checkAuth = function(request, response, next){
   if(!userId){
     response.redirect('/login')
   }
-
   next()
 }

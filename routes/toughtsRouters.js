@@ -17,5 +17,6 @@ router.post("/remove", checkAuth, ToughtController.removeTought);
 router.get("/dashboard", checkAuth, ToughtController.dashboard);
 router.get("/", ToughtController.showToughts);
 
+
 //Exportar a rota
 module.exports = router;

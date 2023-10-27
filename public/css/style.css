@@ -234,7 +234,10 @@ footer span {
 .home-header a {
   color: var(--white);
 }
-
+.home-header h1 span,
+.home-header p span {
+  color: var(--blue);
+}
 .home-header p,
 .home-header form {
   margin-bottom: 1rem;

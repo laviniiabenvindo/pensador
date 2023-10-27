@@ -11,6 +11,7 @@ const Tought = db.define('Tought', {
   }
 })
 
+
 //1 - N
 Tought.belongsTo(User)
 User.hasMany(Tought)

@@ -1,5 +1,9 @@
 <section class="home-header">
-  <h1>Todos os pensamentos</h1>
+  {{#if search}}
+    <h1>Você está buscando por: <span>{{search}}</span></h1>
+  {{else}}
+    <h1>Conheça alguns dos nossos <span>pensamentos</span></h1>
+  {{/if}}
   <form action="/" method="get">
     <input type="text" name="search" placeholder="Está buscando algo?" />
     <input type="submit" value="Buscar" class="btn" />
@@ -22,7 +26,7 @@
         <i class="bi bi-arrow-down">Mais antigos</i>
       </button>
     </form>
-    <a href="">limpar</a>
+    <a href="/">limpar</a>
   </div>
 </section>
 
